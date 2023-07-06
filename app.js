@@ -1,4 +1,4 @@
-function greetUser(){
+function greetUser() {
   let name = prompt("Who are you?:", "");
   document.write("Hey there, long time no see... " + name);
   let purpose = prompt("What are you doing here?");
@@ -11,27 +11,32 @@ function greetUser(){
 
 
 // let question = prompt("Are you sure this is where you want to be?","");
-function confirmUser(){
+function confirmUser() {
   let question = confirm("Are you sure this is where you want to be?");
   if (question) {
-   document.write("Fine, as long as you don't get in my way");
+    document.write("Fine, as long as you don't get in my way");
   } else {
-   document.write("Then leave. I didn't want you here to begin with");
+    document.write("Then leave. I didn't want you here to begin with");
   }
 }
 
-for (let i = 0; i<)
 
 
 // Initial question
-function gutsPic(){
-  
+function gutsPic() {
+
   let response = prompt('Are you ready for this? Yes or no!')
   let imageSource = '';
+  let userInput = '';
+
   if (response.toLowerCase() === 'yes') {
-  
-    let userInput = prompt('Pick a number 1-3:');
-  
+
+    userInput = prompt('Pick a number 1-3:');
+
+    while(userInput != 1 && userInput != 2 && userInput !=3 ){
+      userInput = prompt('Pick a number 1-3:');
+    }
+
     switch (userInput) {
       case '1':
         imageSource = 'https://static.wikia.nocookie.net/berserk/images/7/7a/Manga_E224_Berserker_Armor.png/revision/latest?cb=20190327152407';
@@ -49,6 +54,9 @@ function gutsPic(){
   } else {
     alert('Fine, come back when you are ready to see something really amazing!');
   }
-  document.write('<img src = "' + imageSource + '" />')
+  for (let i = 0; i < userInput; i++) {
+
+    document.write('<img src = "' + imageSource + '" />')
+  }
 }
 //<img src="imageSource" />
